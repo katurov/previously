@@ -54,6 +54,26 @@ MCP вместо этого **создаёт абстрактный слой**, 
   * Слои интерпретации - MCP может сам адаптировать данные под формат, удобный модели (chunking, summarization, embedding и т.д.);
   * Модульность и переносимость - как у Docker или Linux, вы можете “подключить” MCP к другой модели.
 
+## Как подключить MCP к своему AI
+
+Метод настройки примерно одинаковый везде, например в Cursor AI это делается в файле ```~/.cursor/mcp.json``` и буквально прописывается в несколько строк (работает в Cursor и MCP-use):
+
+```JSON
+"mcp.servers": {
+  "atlassian": {
+    "command": "npx",
+    "args": ["-y", "mcp-remote", "https://mcp.atlassian.com/v1/sse"]
+  },
+  "playwright": {
+    "command": "npx",
+    "args": ["@playwright/mcp@latest"],
+    "env": {
+      "DISPLAY": ":1"
+    }
+  }
+}
+```
+
 ## Коллекция MCP
 
   1. [Apple MCP tools](https://github.com/supermemoryai/apple-mcp) - позволяет связывать команды в цепочку, создавая рабочий процесс. Например: «Пожалуйста, прочитай заметку о людях, с которыми я познакомился на конференции, найди их контакты и email’ы, и отправь им сообщение с благодарностью за уделённое время».
@@ -62,6 +82,8 @@ MCP вместо этого **создаёт абстрактный слой**, 
   4. [Sequential Thinking MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) - реализация, предоставляющая инструмент для динамического и рефлексивного решения задач через структурированный мыслительный процесс.
   5. [Asana](https://developers.asana.com/docs/using-asanas-mcp-server) MCP Server - позволяет AI-ассистентам и другим приложениям получать доступ к Asana Work Graph за пределами платформы Asana. Этот сервер предоставляет способ взаимодействия с рабочим пространством Asana через различные AI-платформы и инструменты, поддерживающие MCP.
   6. [Slack MCP Server](https://github.com/korotovsky/slack-mcp-server/tree/master) - для чтения сообщений, поиска по каналам и тредам, доступа к личным и групповым чатам, с поддержкой “умной истории” (по дате или количеству), встроенной информацией о пользователях и кэшированием. Он работает в двух режимах - **Stealth (без установки бота и разрешений)** и OAuth (с безопасным доступом по токену), совместим с корпоративными Slack-средами, поддерживает Stdio/SSE транспорты и прокси, а отправка сообщений отключена по умолчанию для безопасности.
+  7. [Atlassian Remote MCP Server](https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/) - это облачный мост между вашим Atlassian Cloud-сайтом и совместимыми внешними инструментами. После настройки он позволяет этим инструментам взаимодействовать с данными Jira и Confluence в режиме реального времени. Работа сервера основана на защищённой авторизации OAuth 2.1, которая гарантирует, что все действия соблюдают существующие права доступа пользователя.
+  8. [MCP-Use](https://github.com/mcp-use/mcp-use?tab=readme-ov-file) - это способ с открытым исходным кодом подключить любую LLM к любому MCP-серверу и создавать собственные MCP-агенты с доступом к инструментам - без использования проприетарных решений или клиентских приложений.
 
 * [Невероятно длинный список MCP](https://github.com/modelcontextprotocol/servers/tree/main) под все нужды (вероятно)
 * [Model Context Protocol](https://github.com/modelcontextprotocol) - The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. Whether you're building an AI-powered IDE, enhancing a chat interface, or creating custom AI workflows, MCP provides a standardized way to connect LLMs with the context they need.
