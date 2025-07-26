@@ -53,3 +53,13 @@ MCP вместо этого **создаёт абстрактный слой**, 
   * Протоколы загрузки/выгрузки - что подгружать в текущий prompt;
   * Слои интерпретации - MCP может сам адаптировать данные под формат, удобный модели (chunking, summarization, embedding и т.д.);
   * Модульность и переносимость - как у Docker или Linux, вы можете “подключить” MCP к другой модели.
+
+## Коллекция MCP
+
+  1. [Apple MCP tools](https://github.com/supermemoryai/apple-mcp) - позволяет связывать команды в цепочку, создавая рабочий процесс. Например: «Пожалуйста, прочитай заметку о людях, с которыми я познакомился на конференции, найди их контакты и email’ы, и отправь им сообщение с благодарностью за уделённое время».
+  2. [Context7 MCP](https://github.com/upstash/context7) - подтягивает актуальную, версионную документацию и примеры кода напрямую из источника — и вставляет их прямо в prompt. Context7 добавляет свежие примеры и документацию прямо в контекст LLM. Больше не нужно переключать вкладки, сталкиваться с выдуманными API или устаревшими фрагментами кода.
+  3. [Interactive Feedback MCP](https://github.com/noopstudios/interactive-feedback-mcp) - простой MCP-сервер, позволяющий реализовать сценарий с участием человека в цикле разработки с AI (human-in-the-loop), например, в инструментах вроде Cursor. Сервер позволяет запускать команды, просматривать их вывод и напрямую оставлять текстовую обратную связь для модели. Также совместим с Cline и Windsurf.
+  4. [Sequential Thinking MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) - реализация, предоставляющая инструмент для динамического и рефлексивного решения задач через структурированный мыслительный процесс.
+
+* [Невероятно длинный список MCP](https://github.com/modelcontextprotocol/servers/tree/main) под все нужды (вероятно)
+* [Model Context Protocol](https://github.com/modelcontextprotocol) - The Model Context Protocol (MCP) is an open protocol that enables seamless integration between LLM applications and external data sources and tools. Whether you're building an AI-powered IDE, enhancing a chat interface, or creating custom AI workflows, MCP provides a standardized way to connect LLMs with the context they need.
