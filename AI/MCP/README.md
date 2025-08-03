@@ -76,7 +76,7 @@ MCP вместо этого **создаёт абстрактный слой**, 
 
 ## Как собрать свой
 
-Есть [классный пример](https://modelcontextprotocol.io/quickstart/server#claude-for-desktop-integration-issues) как собрать свой MCP с простой задачей (и позже развить до сложной)
+Есть [классный пример](https://modelcontextprotocol.io/quickstart/server#claude-for-desktop-integration-issues) как собрать свой MCP с простой задачей (и позже развить до сложной). Если хочется сделать MCP [как доступный HTTP](https://shivdeepak.com/posts/lets-write-a-remote-mcp-server/) сервис.
 
 ## Коллекция MCP
 
