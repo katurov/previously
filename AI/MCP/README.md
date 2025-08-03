@@ -86,6 +86,12 @@ MCP вместо этого **создаёт абстрактный слой**, 
     }
 ```
 
+Нет разработки без отладки, вот [отличный отладчик для MCP](https://modelcontextprotocol.io/legacy/tools/inspector#python):
+```bash
+npx -y @modelcontextprotocol/inspector npx mcp-remote http://192.168.0.2:8016/sse --allow-http
+```
+
+
 ## Коллекция MCP
 
   1. [Apple MCP tools](https://github.com/supermemoryai/apple-mcp) - позволяет связывать команды в цепочку, создавая рабочий процесс. Например: «Пожалуйста, прочитай заметку о людях, с которыми я познакомился на конференции, найди их контакты и email’ы, и отправь им сообщение с благодарностью за уделённое время».
