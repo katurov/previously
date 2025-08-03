@@ -78,6 +78,14 @@ MCP вместо этого **создаёт абстрактный слой**, 
 
 Есть [классный пример](https://modelcontextprotocol.io/quickstart/server#claude-for-desktop-integration-issues) как собрать свой MCP с простой задачей (и позже развить до сложной). Если хочется сделать MCP [как доступный HTTP](https://shivdeepak.com/posts/lets-write-a-remote-mcp-server/) сервис.
 
+Важно: для MCP требуется HTTPS (за исключением localhost), или указание ```--allow-http```, как в этом примере:
+```JSON
+    "weather": {
+      "command": "npx",
+      "args": ["mcp-remote", "http://192.168.0.2:8016/sse", "--allow-http"]
+    }
+```
+
 ## Коллекция MCP
 
   1. [Apple MCP tools](https://github.com/supermemoryai/apple-mcp) - позволяет связывать команды в цепочку, создавая рабочий процесс. Например: «Пожалуйста, прочитай заметку о людях, с которыми я познакомился на конференции, найди их контакты и email’ы, и отправь им сообщение с благодарностью за уделённое время».
